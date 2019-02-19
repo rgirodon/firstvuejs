@@ -11,7 +11,22 @@ let vueInstance = new Vue({
         provider: 'Design Tech Académie',
         providerUrl: 'https://www.telecom-st-etienne.fr/formations/design-tech-academie-2/',
         providerDescription : 'La Design Tech Academie est une formation labellisée \"Grande École du Numérique\". Il s\'agit d’une formation courte (10 mois), gratuite et qualifiante qui prépare aux métiers du numérique tel que intégrateur web HTML CSS ou développeur web (front-end | back-end | full-stack)',
-        helloCounter: 0
+        helloCounter: 0,
+        displayHelloCounter: true,
+        shoppingList: [
+            { 
+                label: 'lait', 
+                quantity: 2
+            },
+            { 
+                label: 'oeufs', 
+                quantity: 12
+            },
+            { 
+                label: 'farine', 
+                quantity: 1
+            }
+        ]
     },
     computed: {
         providerDescriptionExcerpt() {

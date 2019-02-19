@@ -14,11 +14,20 @@
             
             <p>
                 <button class="btn btn-primary btn-lg" v-on:click="sayHello">Say hello</button>
+                
+                <button class="btn btn-primary btn-lg" v-on:click="displayHelloCounter = false;" v-if="displayHelloCounter">Hide hello counter</button>
+                
+                <button class="btn btn-primary btn-lg" v-on:click="displayHelloCounter = true;" v-else="displayHelloCounter">Display hello counter</button>
             </p>
             
-            <p>
+            <p v-if="displayHelloCounter">
                 You said "hello" {{ helloCounter }} time(s) !
             </p>
+            
+            <h2>Shopping List</h2>
+            <ul>
+                <li v-for="shoppingItem in shoppingList">{{ shoppingItem.label }}</li>
+            </ul>
             
             <p>Powered by <a v-bind:href="providerUrl" target="_blank">{{ provider }}</a> <span class="alert alert-primary">{{ providerDescriptionExcerpt }}</span></p>
             
