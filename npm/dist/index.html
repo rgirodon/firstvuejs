@@ -6,13 +6,13 @@
     <body>
         <div id="app">
             
-            <h1>{{ message }}</h1>
+            <h1>{{ message | capitalize }}</h1>
             
             <h2 v-text="subtitle"></h2>
             
             <p v-html="description"></p>
             
-            <p>Powered by <a v-bind:href="providerUrl" target="_blank">{{ provider }}</a></p>
+            <p>Powered by <a v-bind:href="providerUrl" target="_blank">{{ provider }}</a> <span class="alert alert-primary">{{ providerDescriptionExcerpt }}</span></p>
             
         </div>
         
