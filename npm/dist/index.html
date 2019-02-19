@@ -25,6 +25,7 @@
             </p>
             
             <h2>Shopping List</h2>
+            <label for="itemToAdd">Add Item :</label> <input v-model="itemToAdd" id="itemToAdd"> <button class="btn btn-success" v-on:click="addItem">+</button>
             <ul>
                 <li v-for="shoppingItem in shoppingList">{{ shoppingItem.label }}</li>
             </ul>

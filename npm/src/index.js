@@ -26,7 +26,8 @@ let vueInstance = new Vue({
                 label: 'farine', 
                 quantity: 1
             }
-        ]
+        ],
+        itemToAdd: ''
     },
     computed: {
         providerDescriptionExcerpt() {
@@ -58,6 +59,19 @@ let vueInstance = new Vue({
         sayHello: function() {
             
             this.helloCounter++; 
+        },
+        addItem: function() {
+            
+            let itemToAddObj = {
+                label: this.itemToAdd,
+                quantity: 1
+            };
+            
+            this.shoppingList.push(itemToAddObj);
+            
+            this.itemToAdd = '';
+            
+            document.getElementById('itemToAdd').focus();
         }
     }
 });
