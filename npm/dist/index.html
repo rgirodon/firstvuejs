@@ -8,6 +8,12 @@
             
             <h1>{{ message }}</h1>
             
+            <h2 v-text="subtitle"></h2>
+            
+            <p v-html="description"></p>
+            
+            <p>Powered by <a v-bind:href="providerUrl" target="_blank">{{ provider }}</a></p>
+            
         </div>
         
         <script src="bundle.js"></script>
