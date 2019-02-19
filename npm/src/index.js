@@ -10,7 +10,8 @@ let vueInstance = new Vue({
         description: 'This tutorial illustrates the power of <em>binding</em>',
         provider: 'Design Tech Académie',
         providerUrl: 'https://www.telecom-st-etienne.fr/formations/design-tech-academie-2/',
-        providerDescription : 'La Design Tech Academie est une formation labellisée \"Grande École du Numérique\". Il s\'agit d’une formation courte (10 mois), gratuite et qualifiante qui prépare aux métiers du numérique tel que intégrateur web HTML CSS ou développeur web (front-end | back-end | full-stack)'
+        providerDescription : 'La Design Tech Academie est une formation labellisée \"Grande École du Numérique\". Il s\'agit d’une formation courte (10 mois), gratuite et qualifiante qui prépare aux métiers du numérique tel que intégrateur web HTML CSS ou développeur web (front-end | back-end | full-stack)',
+        helloCounter: 0
     },
     computed: {
         providerDescriptionExcerpt() {
@@ -37,5 +38,11 @@ let vueInstance = new Vue({
     created: function() {
         
         console.log("VueJs instance created");        
+    },
+    methods: {
+        sayHello: function() {
+            
+            this.helloCounter++; 
+        }
     }
 });
