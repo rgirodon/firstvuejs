@@ -33,5 +33,9 @@ let vueInstance = new Vue({
         capitalize: function(text) {
             return text.toUpperCase();
         }
+    },
+    created: function() {
+        
+        console.log("VueJs instance created");        
     }
 });
