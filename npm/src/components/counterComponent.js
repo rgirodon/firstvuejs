@@ -1,3 +1,5 @@
+let lifeCycleMixin = require('../base/lifeCycleMixin');
+
 module.exports = {
 
     template:  `<div>
@@ -18,10 +20,13 @@ module.exports = {
     data: function() {
         
         return {
+            name: 'counterComponent',
             helloCounter: 0,
             displayHelloCounter: true
         }
     },
+    
+    mixins: [lifeCycleMixin],
     
     methods: {
         

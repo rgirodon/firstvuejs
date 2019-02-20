@@ -1,9 +1,11 @@
 let Vue = require('vue');
 
+let lifeCycleMixin = require('../base/lifeCycleMixin');
+
 Vue.component('shopping-list-component', {
     
     template:  `<div>
-                    <h2>Shopping List {{ label }}</h2>
+                    <h2 v-blueify>Shopping List {{ label }}</h2>
             
                     <label :for="addItemId">Add Item :</label> <input v-model="itemToAdd" :id="addItemId"> <button class="btn btn-success" v-on:click="addItem">+</button>
 
@@ -18,9 +20,13 @@ Vue.component('shopping-list-component', {
         'items'  
     ],
     
+    mixins: [lifeCycleMixin],
+    
     data: function() {
         
         return {
+            name: 'shoppingListComponent',
+            
             itemToAdd: ''
         }
     },

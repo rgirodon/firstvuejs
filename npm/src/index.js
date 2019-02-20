@@ -2,6 +2,10 @@ let bootstrap = require('bootstrap');
 
 let Vue = require('vue');
 
+let lifeCycleMixin = require('./base/lifeCycleMixin');
+
+require('./base/blueifyGlobalDirective');
+
 require('./components/welcomeComponent');
 
 let counterComponent = require('./components/counterComponent');
@@ -15,6 +19,8 @@ let vueInstance = new Vue({
     el: '#app',
     
     data: {
+        name: 'rootVueInstance',
+        
         shoppingListEpicerie: [
                 { 
                     label: 'lait', 
@@ -56,10 +62,7 @@ let vueInstance = new Vue({
         }
     },
         
-    created: function() {
-        
-        console.log("VueJs instance created");        
-    },    
+    mixins: [lifeCycleMixin],    
     
     components: {
         'counterComponent': counterComponent

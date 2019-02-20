@@ -1,5 +1,7 @@
 let Vue = require('vue');
 
+let lifeCycleMixin = require('../base/lifeCycleMixin');
+
 Vue.component('footer-component', {
     
     template:  `<footer>
@@ -9,6 +11,8 @@ Vue.component('footer-component', {
     data: function() {
         
         return {
+            name: 'footerComponent',
+            
             provider: 'Design Tech Académie',
         
             providerUrl: 'https://www.telecom-st-etienne.fr/formations/design-tech-academie-2/',
@@ -16,6 +20,8 @@ Vue.component('footer-component', {
             providerDescription : 'La Design Tech Academie est une formation labellisée \"Grande École du Numérique\". Il s\'agit d’une formation courte (10 mois), gratuite et qualifiante qui prépare aux métiers du numérique tel que intégrateur web HTML CSS ou développeur web (front-end | back-end | full-stack)'
         }
     },
+    
+    mixins: [lifeCycleMixin],
     
     computed: {
         providerDescriptionExcerpt() {
