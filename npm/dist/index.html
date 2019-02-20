@@ -6,31 +6,13 @@
     <body>
         <div id="app">
             
-            <h1>{{ message | capitalize }}</h1>
+            <welcome-component></welcome-component>
             
-            <h2 v-text="subtitle"></h2>
+            <counter-component></counter-component>
             
-            <p v-html="description"></p>
+            <shopping-list-component></shopping-list-component>
             
-            <p>
-                <button class="btn btn-primary btn-lg" v-on:click="sayHello">Say hello</button>
-                
-                <button class="btn btn-primary btn-lg" v-on:click="displayHelloCounter = false;" v-if="displayHelloCounter">Hide hello counter</button>
-                
-                <button class="btn btn-primary btn-lg" v-on:click="displayHelloCounter = true;" v-else="displayHelloCounter">Display hello counter</button>
-            </p>
-            
-            <p v-if="displayHelloCounter">
-                You said "hello" {{ helloCounter }} time(s) !
-            </p>
-            
-            <h2>Shopping List</h2>
-            <label for="itemToAdd">Add Item :</label> <input v-model="itemToAdd" id="itemToAdd"> <button class="btn btn-success" v-on:click="addItem">+</button>
-            <ul>
-                <li v-for="shoppingItem in shoppingList">{{ shoppingItem.label }}</li>
-            </ul>
-            
-            <p>Powered by <a v-bind:href="providerUrl" target="_blank">{{ provider }}</a> <span class="alert alert-primary">{{ providerDescriptionExcerpt }}</span></p>
+            <footer-component></footer-component>
             
         </div>
         
