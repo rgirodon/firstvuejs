@@ -3,33 +3,24 @@ let Vue = require('vue');
 Vue.component('shopping-list-component', {
     
     template:  `<div>
-                    <h2>Shopping List</h2>
+                    <h2>Shopping List {{ label }}</h2>
             
-                    <label for="itemToAdd">Add Item :</label> <input v-model="itemToAdd" id="itemToAdd"> <button class="btn btn-success" v-on:click="addItem">+</button>
+                    <label :for="addItemId">Add Item :</label> <input v-model="itemToAdd" :id="addItemId"> <button class="btn btn-success" v-on:click="addItem">+</button>
 
                     <ul>
-                        <li v-for="shoppingItem in shoppingList">{{ shoppingItem.label }}</li>
+                        <li v-for="item in items">{{ item.label }} <button class="btn btn-danger btn-sm" v-on:click="$emit('remove-item', items, item)">-</button></li>
                     </ul>
                 </div>`,
+    
+    props: [
+        'addItemId',
+        'label',
+        'items'  
+    ],
     
     data: function() {
         
         return {
-            shoppingList: [
-                { 
-                    label: 'lait', 
-                    quantity: 2
-                },
-                { 
-                    label: 'oeufs', 
-                    quantity: 12
-                },
-                { 
-                    label: 'farine', 
-                    quantity: 1
-                }
-            ],
-            
             itemToAdd: ''
         }
     },
@@ -42,11 +33,11 @@ Vue.component('shopping-list-component', {
                 quantity: 1
             };
             
-            this.shoppingList.push(itemToAddObj);
+            this.items.push(itemToAddObj);
             
             this.itemToAdd = '';
             
-            document.getElementById('itemToAdd').focus();
+            document.getElementById(this.addItemId).focus();
         }
     }
 });

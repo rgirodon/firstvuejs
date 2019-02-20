@@ -10,10 +10,13 @@ Vue.component('welcome-component', {
                     <p v-html="description"></p>
                 </div>`,
     
+    props: [
+      'message'  
+    ],
+    
     data: function() {
         
         return {
-            message: 'Hello World !',
             subtitle: 'Discovering VueJs binding',
             description: 'This tutorial illustrates the power of <em>binding</em>'
         }

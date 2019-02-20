@@ -6,11 +6,13 @@
     <body>
         <div id="app">
             
-            <welcome-component></welcome-component>
+            <welcome-component message="Hello All !"></welcome-component>
             
-            <counter-component></counter-component>
+            <counter-component><h2>Counter demo</h2></counter-component>
             
-            <shopping-list-component></shopping-list-component>
+            <shopping-list-component v-bind:items="shoppingListEpicerie" label="Epicerie" add-item-id="epicerieAddItem" v-on:remove-item="removeItem"></shopping-list-component>
+            
+            <shopping-list-component v-bind:items="shoppingListBricolage" label="Bricolage" add-item-id="bricolageAddItem" v-on:remove-item="removeItem"></shopping-list-component>
             
             <footer-component></footer-component>
             

@@ -1,6 +1,7 @@
 module.exports = {
 
     template:  `<div>
+                    <slot></slot>
                     <p>
                         <button class="btn btn-primary btn-lg" v-on:click="sayHello">Say hello</button>
 
