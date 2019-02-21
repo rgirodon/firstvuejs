@@ -7,7 +7,7 @@ module.exports = {
 
                         <button class="btn btn-primary btn-lg" v-on:click="displayHelloCounter = false;" v-if="displayHelloCounter">Hide hello counter</button>
 
-                        <button class="btn btn-primary btn-lg" v-on:click="displayHelloCounter = true;" v-else="displayHelloCounter">Display hello counter</button>
+                        <button class="btn btn-primary btn-lg" v-on:click="displayHelloCounter = true;" v-else>Display hello counter</button>
                     </p>
             
                     <p v-if="displayHelloCounter">
