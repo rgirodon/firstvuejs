@@ -58,6 +58,8 @@ Vue.component('shopping-list-component', {
             
             console.log('initializing ' + type + ' shopping list');
             
+            this.label = type.toUpperCase();
+            
             if ('epicerie' == type) {
                         
                 this.items = [
