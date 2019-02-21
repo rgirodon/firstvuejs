@@ -3,7 +3,7 @@ let lifeCycleMixin = require('../base/lifeCycleMixin');
 module.exports = {
 
     template:  `<div>
-                    <slot></slot>
+                    <slot><h2>Counter demo</h2></slot>
                     <p>
                         <button class="btn btn-primary btn-lg" v-on:click="sayHello">Say hello</button>
 

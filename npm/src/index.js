@@ -2,6 +2,10 @@ let bootstrap = require('bootstrap');
 
 let Vue = require('vue');
 
+let VueRouter = require('vue-router');
+
+Vue.use(VueRouter);
+
 let lifeCycleMixin = require('./base/lifeCycleMixin');
 
 require('./base/blueifyGlobalDirective');
@@ -14,52 +18,23 @@ require('./components/shoppingListComponent');
 
 require('./components/footerComponent');
 
+const routes = [
+    { path: '/counter', component: counterComponent },
+    { path: '/shoppingList/:shoppingListType', component: Vue.component('shopping-list-component')}
+];
+
+const router = new VueRouter({
+    routes : routes
+});
+
 let vueInstance = new Vue({	
     
     el: '#app',
     
-    data: {
-        name: 'rootVueInstance',
-        
-        shoppingListEpicerie: [
-                { 
-                    label: 'lait', 
-                    quantity: 2
-                },
-                { 
-                    label: 'oeufs', 
-                    quantity: 12
-                },
-                { 
-                    label: 'farine', 
-                    quantity: 1
-                }
-            ],
-        shoppingListBricolage: [
-                { 
-                    label: 'marteau', 
-                    quantity: 2
-                },
-                { 
-                    label: 'perceuse', 
-                    quantity: 1
-                },
-                { 
-                    label: 'visseuse', 
-                    quantity: 1
-                }
-            ]
-    },
+    router : router,
     
-    methods: {
-        removeItem: function(items, item) {
-            
-            var index = items.indexOf(item);
-            
-            if (index > -1) {
-              items.splice(index, 1);
-            }
-        }
+    data: {
+        name: 'rootVueInstance'
     },
         
     mixins: [lifeCycleMixin],    

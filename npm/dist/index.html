@@ -8,11 +8,28 @@
             
             <welcome-component message="Hello All !"></welcome-component>
             
-            <counter-component><h2>Counter demo</h2></counter-component>
+            <nav class="navbar bg-dark">
+                
+                <ul class="nav justify-content-start">
+                
+                    <li class="nav-item ml-3 px-1">
+                        <router-link to="/counter">Counter Demo</router-link>
+                    </li>
+
+                    <li class="nav-item ml-3 px-1">
+                        <router-link to="/shoppingList/epicerie">Shopping List Epicerie</router-link>
+                    </li>
+                    
+                    <li class="nav-item ml-3 px-1">
+                        <router-link to="/shoppingList/bricolage">Shopping List Bricolage</router-link>
+                    </li>
+                    
+                </ul>
+            </nav>
             
-            <shopping-list-component v-bind:items="shoppingListEpicerie" label="Epicerie" add-item-id="epicerieAddItem" v-on:remove-item="removeItem"></shopping-list-component>
-            
-            <shopping-list-component v-bind:items="shoppingListBricolage" label="Bricolage" add-item-id="bricolageAddItem" v-on:remove-item="removeItem"></shopping-list-component>
+            <main>
+                <router-view></router-view>
+            </main>
             
             <footer-component></footer-component>
             
