@@ -34,14 +34,19 @@ export default {
     
     methods: {        
         addItem: function() {
-            
-            let itemToAddObj = {
+
+            let item = {
                 label: this.itemToAdd,
                 quantity: 1,
                 id: this.sequenceId++
             };
             
-            this.items.push(itemToAddObj);
+            let payload = {
+                type : this.$route.params.shoppingListType,
+                item: item
+            };
+            
+            this.$store.commit('addItem', payload);
             
             this.itemToAdd = '';
             
@@ -50,12 +55,12 @@ export default {
         
         removeItem: function(item) {
             
-            var index = this.items.indexOf(item);
+            let payload = {
+                type : this.$route.params.shoppingListType,
+                item: item
+            };
             
-            if (index > -1) {
-                
-                this.items.splice(index, 1);
-            }
+            this.$store.commit('removeItem', payload);
         },
         
         initializeShoppingList: function(type) {
@@ -66,42 +71,11 @@ export default {
             
             if ('epicerie' == type) {
                         
-                this.items = [
-                    { 
-                        id: 1,
-                        label: 'lait', 
-                        quantity: 2
-                    },
-                    { 
-                        id: 2,
-                        label: 'oeufs', 
-                        quantity: 12
-                    },
-                    { 
-                        id: 3,
-                        label: 'farine', 
-                        quantity: 1
-                    }
-                ];
+                this.items = this.$store.state.epicerieShoppingList;
             }
             else if ('bricolage' == type) {
-                this.items = [
-                    { 
-                        id: 1,
-                        label: 'marteau', 
-                        quantity: 2
-                    },
-                    { 
-                        id: 2,
-                        label: 'perceuse', 
-                        quantity: 1
-                    },
-                    { 
-                        id: 3,
-                        label: 'visseuse', 
-                        quantity: 1
-                    }
-                ];
+                
+                this.items = this.$store.state.bricolageShoppingList;
             }
         }
     },
