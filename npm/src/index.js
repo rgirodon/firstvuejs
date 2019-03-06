@@ -16,15 +16,38 @@ let vueInstance = new Vue({
         shoppingList: [
             { 
                 label: 'lait', 
-                quantity: 2
+                quantity: 2,
+                categorie: 'epicerie'
             },
             { 
                 label: 'oeufs', 
-                quantity: 12
+                quantity: 12,
+                categorie: 'epicerie'
             },
             { 
                 label: 'farine', 
-                quantity: 1
+                quantity: 1,
+                categorie: 'epicerie'
+            },
+            { 
+                label: 'bache', 
+                quantity: 1,
+                categorie: 'bricolage'
+            },
+            { 
+                label: 'sous-couche blanc', 
+                quantity: 1,
+                categorie: 'bricolage'
+            },
+            { 
+                label: 'peinture bleue', 
+                quantity: 1,
+                categorie: 'bricolage'
+            },
+            { 
+                label: 'rouleau', 
+                quantity: 1,
+                categorie: 'bricolage'
             }
         ]
     },
@@ -43,7 +66,27 @@ let vueInstance = new Vue({
             }
             
             return result;
-        }
+        },        
+        shoppingListEpicerie: function() {
+    
+            return this.shoppingList.filter(
+                
+                function(item) {
+                    
+                    return item.categorie == 'epicerie';
+                }
+            );
+        },
+        shoppingListBricolage: function() {
+    
+            return this.shoppingList.filter(
+                
+                function(item) {
+                    
+                    return item.categorie == 'bricolage';
+                }
+            );
+        },
     },
     filters: {
         capitalize: function(text) {

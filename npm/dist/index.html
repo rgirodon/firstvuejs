@@ -24,9 +24,14 @@
                 You said "hello" {{ helloCounter }} time(s) !
             </p>
             
-            <h2>Shopping List</h2>
+            <h2>Shopping List Epicerie</h2>
             <ul>
-                <li v-for="shoppingItem in shoppingList">{{ shoppingItem.label }}</li>
+                <li v-for="shoppingItem in shoppingListEpicerie">{{ shoppingItem.label }}</li>
+            </ul>
+            
+            <h2>Shopping List Bricolage</h2>
+            <ul>
+                <li v-for="shoppingItem in shoppingListBricolage">{{ shoppingItem.label }}</li>
             </ul>
             
             <p>Powered by <a v-bind:href="providerUrl" target="_blank">{{ provider }}</a> <span class="alert alert-primary">{{ providerDescriptionExcerpt }}</span></p>
