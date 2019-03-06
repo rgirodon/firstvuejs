@@ -72,6 +72,15 @@ let vueInstance = new Vue({
             this.itemToAdd = '';
             
             document.getElementById('itemToAdd').focus();
+        },        
+        removeItem: function(item){
+            
+            let index = this.shoppingList.indexOf(item);
+            
+            if (index > -1) {
+                
+              this.shoppingList.splice(index, 1);
+            }
         }
     }
 });
