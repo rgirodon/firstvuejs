@@ -4,7 +4,7 @@ let Vue = require('vue');
 
 require('./components/welcomeComponent');
 
-let counterComponent = require('./components/counterComponent');
+let counterComponent = require('./components/counterComponent.vue');
 
 require('./components/shoppingListComponent');
 

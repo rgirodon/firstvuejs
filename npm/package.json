@@ -16,5 +16,11 @@
   },
   "browser": {
     "vue": "vue/dist/vue.common.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "vue-template-compiler": "^2.6.6",
+    "vueify": "^9.4.1"
   }
 }
