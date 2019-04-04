@@ -23,8 +23,14 @@ export default {
         
         return {
             name: 'counterComponent',
-            helloCounter: 0,
+            
             displayHelloCounter: true
+        }
+    },
+    
+    computed: {
+        helloCounter: function() {
+            return this.$store.state.counter;
         }
     },
     
@@ -34,7 +40,7 @@ export default {
         
         sayHello: function() {
             
-            this.helloCounter++; 
+            this.$store.commit('incrementCounter'); 
         },
     }
 }

@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    
+      counter: 0,
+      
       epicerieShoppingList: [
                     { 
                         id: 1,
@@ -43,6 +44,11 @@ export default new Vuex.Store({
                 ] 
   },
   mutations: {
+      
+      incrementCounter: function(state) {
+            
+        state.counter++; 
+      },
       
       addItem: function(state, payload) {
           
